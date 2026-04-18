@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahalakshmi Footwear - Premium Footwear Collection | Greater Noida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .cta-btn {
+            background: linear-gradient(45deg, #d4af37, #f1c40f);
+            color: #1a1a1a;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a1a" width="1200" height="800"/><path fill="%232d2d2d" opacity="0.5" d="M0 0h1200v800H0z"/><circle fill="%23d4af37" opacity="0.1" cx="200" cy="200" r="150"/><circle fill="%23d4af37" opacity="0.05" cx="1000" cy="600" r="200"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #d4af37, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Store Info Section */
+        .store-info {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #d4af37, #f1c40f);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .phone-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #d4af37, #f1c40f);
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .phone-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Address Card */
+        .address-card {
+            background: rgba(255,255,255,0.95);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            margin: 4rem auto;
+            max-width: 800px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        /* Timings Table */
+        .timings-table {
+            background: rgba(255,255,255,0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            margin: 4rem auto;
+            max-width: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        th, td {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        th {
+            font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: #d4af37;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 70px;
+                height: 90vh;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card, .address-card, .timings-table {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .info-card:nth-child(1) { animation-delay: 0.1s; }
+        .info-card:nth-child(2) { animation-delay: 0.2s; }
+        .info-card:nth-child(3) { animation-delay: 0.3s; }
+        .address-card { animation-delay: 0.4s; }
+        .timings-table { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Mahalakshmi Footwear</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:+919999330025" class="cta-btn">Call Now</a>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Mahalakshmi Footwear</h1>
+            <p>Experience Luxury & Comfort in Every Step</p>
+            <a href="tel:+919999330025" class="cta-btn">Call Now</a>
+        </div>
+    </section>
+
+    <!-- Store Information -->
+    <section class="store-info" id="about">
+        <h2 class="section-title">Our Signature Collection</h2>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Customer Excellence</h3>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>4.7 ★ (434 Reviews)</span>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Contact</h3>
+                <p><strong>Phone:</strong> 09999 330025</p>
+                <a href="tel:+919999330025" class="phone-link">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Open Daily</h3>
+                <p>10 AM - 9 PM<br><strong>Every Day</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Address Card (Replaced Map Section) -->
+    <section class="address-card" id="location">
+        <div class="info-icon" style="font-size: 4rem; margin-bottom: 2rem;">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1.5rem; color: #1a1a1a;">
+            Visit Us
+        </h3>
+        <p style="font-size: 1.2rem; line-height: 1.8; color: #333; margin-bottom: 2rem;">
+            Gurubaksh Plaza, Gamma 1 Block B Rd,<br>
+            Jagat Farm, Block E, Chandila,<br>
+            Gamma 1, Greater Noida,<br>
+            Uttar Pradesh 201310
+        </p>
+        <p style="font-size: 1rem; color: #666; margin-bottom: 2rem;">
+            📏 3.9 km from city center
+        </p>
+        <div>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Gurubaksh+Plaza,+Gamma+1+Block+B+Rd,+Jagat+Farm,+Block+E,+Chandila,+Gamma+1,+Greater+Noida,+Uttar+Pradesh+201310" 
+               target="_blank" class="cta-btn" style="margin-right: 1rem;">
+                <i class="fas fa-directions"></i> Get Directions
+            </a>
+            <a href="https://maps.google.com/?q=Gurubaksh+Plaza,+Gamma+1+Block+B+Rd,+Jagat+Farm,+Block+E,+Chandila,+Gamma+1,+Greater+Noida,+Uttar+Pradesh+201310" 
+               target="_blank" class="cta-btn">
+                <i class="fas fa-external-link-alt"></i> Open Maps
+            </a>
+        </div>
+    </section>
+
+    <!-- Timings Table -->
+    <section class="timings-table">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 1.8rem;">
+            <i class="fas fa-clock"></i> Store Timings
+        </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Timing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Saturday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Sunday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Monday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Tuesday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Wednesday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Thursday</td><td>10 am – 9 pm</td></tr>
+                <tr><td>Friday</td><td>10 am – 9 pm</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Mahalakshmi Footwear</h3>
+            <p>Premium Footwear for Discerning Tastes</p>
+            <p style="margin: 1rem 0; font-size: 0.9rem; opacity: 0.8;">
+                Gurubaksh Plaza, Gamma 1 Block B Rd,<br>
+                Jagat Farm, Block E, Chandila, Gamma 1,<br>
+                Greater Noida, Uttar Pradesh 201310
+            </p>
+            <div class="social-links">
+                <a href="https://wa.me/919999330025" target="_blank" rel="noopener" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" title="Google">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+            <p style="
